@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{%block main %}
+<table>
+    <tr>
+        <th> Name </th>
+        <th> Transaction </th>
+    </tr>
+
+
+    {% for his in history %}
+        <tr>
+            <td> {{his['name']}} </td>
+            <td> {{his['tran']}}</td>
+        </tr>
+    {%endfor%}
+        
+    
+</table>
+{% endblock %}

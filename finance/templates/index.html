@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{%block main %}
+
+    <table>
+        <tr>
+            <th> Your Stocks </th>
+            <th> Buy Price </th>
+            <th> Current Price </th>
+            <th> No of stocks owned </th>
+            <th> Current Cash </th>
+        </tr>
+
+
+        {% for stock in stocks %}
+            <tr>
+                <td> {{stock['stock_name']}} </td>
+                <td> {{stock['price']}}</td>
+                <td> {{stock['stock_price']}} </td>
+                <td> {{stock['no_of_stocks']}} </td>
+                <td> {{stock['cash']}} </td>
+            </tr>
+        {%endfor%}
+            
+        
+    </table>
+{% endblock %}

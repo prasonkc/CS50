@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Trivia!</title>
+    <script>
+        // TODO: Add code to check answers to questions
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let buttons = document.querySelectorAll("button");
+
+            let para = document.querySelectorAll("p");
+
+            buttons.forEach(check_answers);
+
+            function check_answers(buttons) {
+                buttons.addEventListener('click', function () {
+                    // alert(buttons.className)   
+                    if (buttons.className == 'correct') {
+                        buttons.style.backgroundColor = "green";
+                        buttons.style.color = "white";
+                        document.querySelector('p').innerHTML = "Correct";
+                    }
+                    else {
+                        buttons.style.backgroundColor = "red";
+                        buttons.style.color = "white";
+                        document.querySelector('p').innerHTML = "Incorrect";
+                    }
+                })
+            }
+
+
+            let submit = document.querySelector('#submit');
+            let answer = document.querySelector('#answer');
+            submit.addEventListener("click", function(){
+                if(answer.value == 7 || answer.value.toLowerCase() == "seven"){
+                    // alert("correct");
+                    answer.style.backgroundColor = 'green';
+                    answer.style.color = 'white';
+                    document.querySelector('#sectionGhostp').innerHTML = "Correct";
+                }
+                else{
+                    answer.style.backgroundColor = 'red';
+                    answer.style.color = 'white';
+                    document.querySelector('#sectionGhostp').innerHTML = "Incorrect";
+                }
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <p></p>
+            <!-- TODO: Add multiple choice question here -->
+            <div id="qn1">
+                <h3>What does “www” stand for in a website browser?</h3>
+                <button class="correct">A. World Wide Web</button>
+                <button>B. World Web Webinar</button>
+                <button>C. Worldly Wiggly Webbing</button>
+                <button>D. World Worth Wonderland</button>
+
+            </div>
+
+            <div id="q2">
+                <h3>What phone does Apple manufacture?</h3>
+                <button>A. Android</button>
+                <button>B. Blackberry</button>
+                <button>B. Microsoft</button>
+                <button class="correct">D. Iphone</button>
+            </div>
+
+            <div id="q3">
+                <h3>Who is the CEO of Meta</h3>
+                <button>A. Steve Jobs</button>
+                <button class="correct">B. Mark Zuckerberg</button>
+                <button>C. Mark Tilbury</button>
+                <button>D. Sundar Pichai</button>
+            </div>
+
+            <div id="q4">
+                <h3>How many days are there in a leap year?</h3>
+                <button>A. 362 Days</button>
+                <button class="correct">B. 366 Days</button>
+                <button>C. 365 Days</button>
+                <button>D. 363 Days</button>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!-- TODO: Add free response question here -->
+            <div class="p2q1">
+                <h3>How many continents are there in the world?</h3>
+                <input type="text" name="answer" id="answer" placeholder="Type your answer">
+                <input type="submit" name="confirm" id="submit">
+                <p id="sectionGhostp"></p>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
